@@ -1,3 +1,4 @@
 -This sample demonstrates how to store files in SQL Server database
 -If some how you can not use provided FileStore.mdf database then you can generate necessary table using scripts provided in "FileStore.sql" file.
 -Change connection string on both forms to point to correct path for mdf file.
+-For detailed instructions visit -> https://shabdar.org/2011/05/27/store-or-save-files-in-sql-server-database-using-c/
