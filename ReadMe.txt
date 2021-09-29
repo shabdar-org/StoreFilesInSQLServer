@@ -1,3 +1,3 @@
--Restore database from SQL Database directory. 
--If some how you can not restore provided database, you can generate necessary table using scripts provided in SQL Database directory.
--Change connection string on form.
+-This sample demonstrates how to store files in SQL Server database
+-If some how you can not use provided FileStore.mdf database then you can generate necessary table using scripts provided in "FileStore.sql" file.
+-Change connection string on both forms to point to correct path for mdf file.
