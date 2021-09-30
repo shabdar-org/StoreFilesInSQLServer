@@ -110,6 +110,46 @@ namespace StoreFilesInSQLServer
         {
             //This event is to ignore an error related to grid.
         }
-        
+
+        private void cmdDeleteFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Select a row first in Grid");
+                    return;
+                }
+                object selectedFileId = dataGridView1.SelectedRows[0].Cells[0].Value;
+                if (MessageBox.Show("Are you sure to delete this record?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    //Initialize SQL Server Connection
+                    SqlConnection CN = new SqlConnection(txtConnectionString.Text);
+
+                    //Set insert query
+                    string qry = "delete from FileStore where FileId=@FileId";
+
+                    //Initialize SqlCommand object for insert.
+                    SqlCommand SqlCom = new SqlCommand(qry, CN);
+
+                    //We are passing Original Image Path and Image byte data as sql parameters.
+                    SqlCom.Parameters.Add(new SqlParameter("@FileId", selectedFileId));
+
+                    //Open connection and execute insert query.
+                    CN.Open();
+                    SqlCom.ExecuteNonQuery();
+                    CN.Close();
+
+                    //Refresh Grid after deleting record
+                    cmdConnect_Click(null, null);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
     }
 }

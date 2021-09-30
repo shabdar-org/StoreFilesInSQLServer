@@ -36,6 +36,7 @@ namespace StoreFilesInSQLServer
             this.cmdConnect = new System.Windows.Forms.Button();
             this.btnSaveFromDBToDisk = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.cmdDeleteFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,11 +112,23 @@ namespace StoreFilesInSQLServer
             this.btnSaveFromDBToDisk.UseVisualStyleBackColor = true;
             this.btnSaveFromDBToDisk.Click += new System.EventHandler(this.btnSaveFromDBToDisk_Click);
             // 
+            // cmdDeleteFile
+            // 
+            this.cmdDeleteFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdDeleteFile.Location = new System.Drawing.Point(323, 375);
+            this.cmdDeleteFile.Name = "cmdDeleteFile";
+            this.cmdDeleteFile.Size = new System.Drawing.Size(264, 29);
+            this.cmdDeleteFile.TabIndex = 8;
+            this.cmdDeleteFile.Text = "Delete selected file";
+            this.cmdDeleteFile.UseVisualStyleBackColor = true;
+            this.cmdDeleteFile.Click += new System.EventHandler(this.cmdDeleteFile_Click);
+            // 
             // frmFilesStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 475);
+            this.Controls.Add(this.cmdDeleteFile);
             this.Controls.Add(this.btnSaveFromDBToDisk);
             this.Controls.Add(this.cmdConnect);
             this.Controls.Add(this.cmdStoreNewFile);
@@ -141,6 +154,7 @@ namespace StoreFilesInSQLServer
         private System.Windows.Forms.Button cmdConnect;
         private System.Windows.Forms.Button btnSaveFromDBToDisk;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button cmdDeleteFile;
     }
 }
 
